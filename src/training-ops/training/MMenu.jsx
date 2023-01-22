@@ -24,7 +24,6 @@ import {
   MenuItem,
   Portal,
 } from "@chakra-ui/react";
-import { Link } from "react-router-dom";
 
 function MMenu({ changeLvl }) {
   const { isOpen, onOpen, onClose } = useDisclosure();
@@ -101,14 +100,14 @@ function MMenu({ changeLvl }) {
                     </MenuButton>
                     <Portal>
                       <MenuList zIndex="10000">
-                        <MenuItem>
-                          <Link to="/training/3l1">Уровень 1</Link>
+                        <MenuItem onClick={() => changeLvl(3)}>
+                          Уровень 1
                         </MenuItem>
-                        <MenuItem>
-                          <Link to="/training/3l2">Уровень 2</Link>
+                        <MenuItem onClick={() => changeLvl(3)}>
+                          Уровень 2
                         </MenuItem>
-                        <MenuItem>
-                          <Link to="/training/3l3">Уровень 3</Link>
+                        <MenuItem onClick={() => changeLvl(3)}>
+                          Уровень 3
                         </MenuItem>
                       </MenuList>
                     </Portal>
@@ -119,14 +118,14 @@ function MMenu({ changeLvl }) {
                     </MenuButton>
                     <Portal>
                       <MenuList zIndex="10000">
-                        <MenuItem>
-                          <Link to="/training/4l1">Уровень 1</Link>
+                        <MenuItem onClick={() => changeLvl(4)}>
+                          Уровень 1
                         </MenuItem>
-                        <MenuItem>
-                          <Link to="/training/4l2">Уровень 2</Link>
+                        <MenuItem onClick={() => changeLvl(4)}>
+                          Уровень 2
                         </MenuItem>
-                        <MenuItem>
-                          <Link to="/training/4l3">Уровень 3</Link>
+                        <MenuItem onClick={() => changeLvl(4)}>
+                          Уровень 3
                         </MenuItem>
                       </MenuList>
                     </Portal>
