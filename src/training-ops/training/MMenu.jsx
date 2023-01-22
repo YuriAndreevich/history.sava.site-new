@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 
-import "./1l1/training.scss";
+import "./data/1/training.scss";
+
 import settingsSVG from "../Img/setting.svg";
 
 import {
@@ -25,7 +26,7 @@ import {
 } from "@chakra-ui/react";
 import { Link } from "react-router-dom";
 
-function MMenu() {
+function MMenu({ changeLvl }) {
   const { isOpen, onOpen, onClose } = useDisclosure();
   useEffect(() => {
     onOpen("true");
@@ -64,11 +65,11 @@ function MMenu() {
                     </MenuButton>
                     <Portal>
                       <MenuList zIndex="10000">
-                        <MenuItem>
-                          <Link to="/training/1l1">Уровень 1</Link>
+                        <MenuItem onClick={(event) => changeLvl(1)}>
+                          Уровень 1
                         </MenuItem>
-                        <MenuItem><Link to="/training/1l2">Уровень 2</Link></MenuItem>
-                        <MenuItem><Link to="/training/1l3">Уровень 3</Link></MenuItem>
+                        <MenuItem>Уровень 2</MenuItem>
+                        <MenuItem>Уровень 3</MenuItem>
                       </MenuList>
                     </Portal>
                   </Menu>
@@ -81,8 +82,12 @@ function MMenu() {
                         <MenuItem>
                           <Link to="/training/2l1">Уровень 1</Link>
                         </MenuItem>
-                        <MenuItem><Link to="/training/2l2">Уровень 2</Link></MenuItem>
-                        <MenuItem><Link to="/training/2l3">Уровень 3</Link></MenuItem>
+                        <MenuItem>
+                          <Link to="/training/2l2">Уровень 2</Link>
+                        </MenuItem>
+                        <MenuItem>
+                          <Link to="/training/2l3">Уровень 3</Link>
+                        </MenuItem>
                       </MenuList>
                     </Portal>
                   </Menu>
@@ -95,8 +100,12 @@ function MMenu() {
                         <MenuItem>
                           <Link to="/training/3l1">Уровень 1</Link>
                         </MenuItem>
-                        <MenuItem><Link to="/training/3l2">Уровень 2</Link></MenuItem>
-                        <MenuItem><Link to="/training/3l3">Уровень 3</Link></MenuItem>
+                        <MenuItem>
+                          <Link to="/training/3l2">Уровень 2</Link>
+                        </MenuItem>
+                        <MenuItem>
+                          <Link to="/training/3l3">Уровень 3</Link>
+                        </MenuItem>
                       </MenuList>
                     </Portal>
                   </Menu>
@@ -109,8 +118,12 @@ function MMenu() {
                         <MenuItem>
                           <Link to="/training/4l1">Уровень 1</Link>
                         </MenuItem>
-                        <MenuItem>Уровень 2</MenuItem>
-                        <MenuItem>Уровень 3</MenuItem>
+                        <MenuItem>
+                          <Link to="/training/4l2">Уровень 2</Link>
+                        </MenuItem>
+                        <MenuItem>
+                          <Link to="/training/4l3">Уровень 3</Link>
+                        </MenuItem>
                       </MenuList>
                     </Portal>
                   </Menu>

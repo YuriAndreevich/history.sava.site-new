@@ -6,15 +6,18 @@ import Menu from "./components/Menu";
 import { useState, useEffect } from "react";
 import Search from "./components/Search";
 import Quiz from "./components/Quiz";
-import Training1l1 from "./training-ops/training/1l1";
-import Training1l2 from "./training-ops/training/1l2";
-import Training1l3 from "./training-ops/training/1l3";
-import Training2l1 from "./training-ops/training/2l1";
-import Training2l2 from "./training-ops/training/2l2";
-import Training2l3 from "./training-ops/training/2l3";
-import Training3l1 from "./training-ops/training/3l1";
-import Training3l2 from "./training-ops/training/3l2";
-import Training3l3 from "./training-ops/training/3l3";
+import Training1l1 from "./training-ops/training/";
+// import Training1l2 from "./training-ops/training/1l2";
+// import Training1l3 from "./training-ops/training/1l3";
+// import Training2l1 from "./training-ops/training/2l1";
+// import Training2l2 from "./training-ops/training/2l2";
+// import Training2l3 from "./training-ops/training/2l3";
+// import Training3l1 from "./training-ops/training/3l1";
+// import Training3l2 from "./training-ops/training/3l2";
+// import Training3l3 from "./training-ops/training/3l3";
+// import Training4l1 from "./training-ops/training/4l1";
+// import Training4l2 from "./training-ops/training/4l2";
+// import Training4l3 from "./training-ops/training/4l3";
 
 function App() {
   const [menuActive, setMenuActive] = useState(false);
@@ -25,7 +28,7 @@ function App() {
       setHiddenNav(!HiddenNav);
     }
   }, [])// eslint-disable-line
-  
+
 
 
   return (
@@ -51,14 +54,6 @@ function App() {
       </nav>
       <Routes>
         <Route path="/training/1l1" element={<Training1l1 />} />
-        <Route path="/training/1l2" element={<Training1l2 />} />
-        <Route path="/training/1l3" element={<Training1l3 />} />
-        <Route path="/training/2l1" element={<Training2l1 />} />
-        <Route path="/training/2l2" element={<Training2l2 />} />
-        <Route path="/training/2l3" element={<Training2l3 />} />
-        <Route path="/training/3l1" element={<Training3l1 />} />
-        <Route path="/training/3l2" element={<Training3l2 />} />
-        <Route path="/training/3l3" element={<Training3l3 />} />
 
         <Route path="/" element={<Main />} />
         <Route path="/search" element={<Search />} />
