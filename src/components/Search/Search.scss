@@ -1,0 +1,36 @@
+.search {
+    margin: 300px auto;
+    padding: 10px;
+    max-width: 1200px;
+    min-width: 310px;
+    background-color: white;
+    color: white;
+    border-radius: 35px;
+    text-align: center;
+    text-decoration: none;
+
+    &__input {
+        border: none;
+        width: 200px;
+        text-align: center;
+        border-bottom: none;
+        outline: none;
+    }
+
+    &__text {
+        font-size: 1.5rem;
+        color: black;
+        padding: 0 auto;
+        text-align: left;
+        list-style-type: none;
+        text-indent: 25px;
+
+        li {
+            margin: 15px;
+        }
+    }
+}
+
+.Quiz{
+    padding: 100px
+}

@@ -1,0 +1,63 @@
+.bilet {
+    max-width: 1200px;
+    height: 100%;
+    margin: 60px auto 20px;
+    border-radius: 35px;
+    min-width: 310px;
+
+    img {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        width: 400px;
+    }
+
+    &__number {
+        pointer-events: none;
+        text-decoration: solid;
+        padding: 0;
+        margin: 7px;
+        color: black;
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 50;
+        font-size: 2.28rem;
+        text-align: center;
+        width: 100%;
+    }
+
+    &__details {
+        text-align: left;
+        background-color: white;
+        font-size: 1.5rem;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+        transition: 0.3s;
+        border-radius: 35px;
+        margin: 10px;
+        min-width: 310px;
+        padding: 10px;
+
+        p {
+            text-indent: 25px;
+            padding: 10px;
+
+        }
+
+        p::selection {
+            background: rgb(237, 255, 133);
+        }
+
+
+        summary p {
+            font-size: 2rem;
+        }
+    }
+
+    &__numbervopros {
+        font-size: 1rem;
+        margin: 0;
+        padding: 0;
+    }
+
+}

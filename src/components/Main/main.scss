@@ -1,0 +1,38 @@
+.main {
+    &__search {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: row;
+        width: 100%;
+        margin-top:20px;
+    }
+    &__cover {
+        text-align: center;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        &__text{
+            font-size: 2rem;
+        }
+
+        p {
+            color: white;
+        }
+
+        &__details {
+            width: 50px;
+            text-align: center;
+        }
+        .btn {
+            background-color: rgba(0, 0, 0, 0);
+            box-shadow: none;
+        }
+    }
+
+    &__text {
+        font-size: 2.28rem;
+        text-indent: 0;
+        padding: 100px 0 0 0;
+    }
+}

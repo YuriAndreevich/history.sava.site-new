@@ -1,0 +1,30 @@
+
+nav{
+  height: 50px;
+  width: 100%;
+  background-color: white;
+  position: fixed;
+  display: flex;
+  align-items: center;
+  z-index: 50;
+   top: 0; 
+   left: 0;
+   line-height: 26px;
+}
+
+main{
+  padding: 50px;
+}
+
+.burger-btn{
+  position: relative;
+  cursor: pointer;
+  height: 32px;
+}
+
+header.links {
+  display: none;
+}
+.none{
+  display: none;
+}

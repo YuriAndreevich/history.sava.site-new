@@ -1,0 +1,136 @@
+.quiz {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+
+    .card {
+        background-color: #464646;
+        width: 295px;
+        height: 385px;
+        text-align: center;
+        margin: 10px;
+        border-radius: 35px;
+        margin-right: 8px;
+        box-shadow: 2px 2px 5px #000, 2px 2px 5px black;
+
+        img {
+            width: 295px;
+            border-top-right-radius: 35px;
+            border-top-left-radius: 35px;
+            height: 275px;
+            text-align: center;
+            border: 2px solid #464646;
+        }
+    }
+
+    .btn {
+        margin: 5px;
+        width: 150px;
+        margin: 5px auto 0 auto;
+        border-radius: 5px;
+        background-color: #2a5c25;
+        box-shadow: 2px 2px 5px #000, 2px 2px 5px rgb(119, 117, 117);
+    }
+
+    .btn:hover {
+        background-color: #20461d;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+
+    p {
+        font-size: 1.5rem;
+        text-align: center;
+        color: white;
+    }
+}
+
+
+
+.spravka {
+    width: 100vw;
+    height: 100vh;
+    margin: 0 auto;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 35px;
+    z-index: 60;
+    align-items: center;
+    overflow-x: scroll;
+
+    &__content {
+        overflow-x: scroll;
+        display: block;
+        width: 1200px;
+        height: 100%;
+        padding: 20px;
+        background-color: white;
+        border-radius: 12px;
+        p {
+            color: black;
+            text-align: left;
+            text-indent: 25px;
+            padding: 15px;
+        }
+    }
+
+}
+.blur {
+    width: 100vw;
+    height: 100vh;
+    backdrop-filter: blur(2px);
+    position: fixed;
+}
+.test {
+    width: 100vw;
+    height: 100vh;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    z-index: 60;
+    align-items: center;
+    overflow-x: scroll;
+    
+
+    &__content {
+        overflow-x: scroll;
+        display: flex;
+        width: 600px;
+        height: auto;
+        padding: 20px;
+        background-color: white;
+        border-radius: 12px;
+
+        p {
+            width: 100%;
+            align-items: center;
+        }
+
+        .btn-test {
+            display: flex;
+            align-content: flex-end;
+            flex-direction: column;
+            flex-wrap: wrap;
+        }
+
+        button {
+            padding: 10px;
+            margin: 5px;
+            background-color: #696c93;
+            border-radius: 15px;
+            border: 2px solid #50526e;
+        }
+
+        p {
+            color: black;
+            text-align: left;
+            text-indent: 25px;
+            padding: 15px;
+        }
+    }
+
+}
