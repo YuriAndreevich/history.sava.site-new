@@ -14,11 +14,18 @@ import { board, iBoard } from "./data/1/1l1";
 
 function Training() {
   const [activeLvl, setActiveLvl] = useState(1);
-  const [boards, setBoard] = useState(activeLvl == 1 && board);
 
-  const changeLvl = (e) => {
-    setActiveLvl(changeLvl);
+  const changeLvl = (activeLvl) => {
+    setActiveLvl(activeLvl);
   };
+  const activeArrayLvl = [
+    { board, schema: schema1 },
+    { board, schema: schema2 },
+    { board, schema: schema3 },
+    { board, schema: schema4 },
+  ];
+
+  const [boards, setBoard] = useState(activeArrayLvl[activeLvl - 1].board);
 
   function soundPlay(src) {
     const sound = new Howl({
@@ -176,7 +183,7 @@ function Training() {
       </button>
       <MMenu changeLvl={changeLvl} />
       <img
-        src={activeLvl == 1 && schema1}
+        src={activeArrayLvl[activeLvl - 1].schema}
         className="boardImg absolute"
         alt=""
       />

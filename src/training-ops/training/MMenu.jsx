@@ -65,11 +65,15 @@ function MMenu({ changeLvl }) {
                     </MenuButton>
                     <Portal>
                       <MenuList zIndex="10000">
-                        <MenuItem onClick={(event) => changeLvl(1)}>
+                        <MenuItem onClick={() => changeLvl(1)}>
                           Уровень 1
                         </MenuItem>
-                        <MenuItem>Уровень 2</MenuItem>
-                        <MenuItem>Уровень 3</MenuItem>
+                        <MenuItem onClick={() => changeLvl(1)}>
+                          Уровень 2
+                        </MenuItem>
+                        <MenuItem onClick={() => changeLvl(1)}>
+                          Уровень 3
+                        </MenuItem>
                       </MenuList>
                     </Portal>
                   </Menu>
@@ -79,14 +83,14 @@ function MMenu({ changeLvl }) {
                     </MenuButton>
                     <Portal>
                       <MenuList zIndex="10000">
-                        <MenuItem>
-                          <Link to="/training/2l1">Уровень 1</Link>
+                        <MenuItem onClick={() => changeLvl(2)}>
+                          Уровень 1
                         </MenuItem>
-                        <MenuItem>
-                          <Link to="/training/2l2">Уровень 2</Link>
+                        <MenuItem onClick={() => changeLvl(2)}>
+                          Уровень 2
                         </MenuItem>
-                        <MenuItem>
-                          <Link to="/training/2l3">Уровень 3</Link>
+                        <MenuItem onClick={() => changeLvl(2)}>
+                          Уровень 3
                         </MenuItem>
                       </MenuList>
                     </Portal>
