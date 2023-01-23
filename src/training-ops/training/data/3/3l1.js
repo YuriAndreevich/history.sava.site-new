@@ -5,7 +5,7 @@ import SvetOpov from "../../../Img/training/световойОповещател
 import DimovoyToch from "../../../Img/training/извещательДымовойТочечный.png";
 import izvRuchn from "../../../Img/training/извещательРучной.png";
 
-export const iBoard = [
+export const iBoard3 = [
   {
     id: 1,
     title: "Расставьте  ",
@@ -69,7 +69,7 @@ export const iBoard = [
     items: [{ id: [12, 4], title: "12" }],
   },
 ];
-export const board = [
+export const board3 = [
   {
     id: 1,
     title:

@@ -6,14 +6,17 @@ import Menu from "./components/Menu";
 import { useState, useEffect } from "react";
 import Search from "./components/Search";
 import Quiz from "./components/Quiz";
-import Training from "./training-ops/training/";
+import T1l1 from "./training-ops/training/T1l1";
+import T2l1 from "./training-ops/training/T2l1";
+import T3l1 from "./training-ops/training/T3l1";
+import T4l1 from "./training-ops/training/T4l1";
 
 function App() {
   const [menuActive, setMenuActive] = useState(false);
   const [HiddenNav, setHiddenNav] = useState(false);
 
   useEffect(() => {
-    if (window.location.pathname === '/training') {
+    if (window.location.pathname === '/training/1l1') {
       setHiddenNav(!HiddenNav);
     }
   }, [])// eslint-disable-line
@@ -42,7 +45,10 @@ function App() {
         </div>
       </nav>
       <Routes>
-        <Route path="/training" element={<Training />} />
+        <Route path="/training/1l1" element={<T1l1 />} />
+        <Route path="/training/2l1" element={<T2l1 />} />
+        <Route path="/training/3l1" element={<T3l1 />} />
+        <Route path="/training/4l1" element={<T4l1 />} />
 
         <Route path="/" element={<Main />} />
         <Route path="/search" element={<Search />} />

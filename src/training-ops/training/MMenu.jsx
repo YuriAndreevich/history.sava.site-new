@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 
-import "./data/1/training.scss";
+import "./MMenu.scss";
 
 import settingsSVG from "../Img/setting.svg";
 
@@ -24,8 +24,9 @@ import {
   MenuItem,
   Portal,
 } from "@chakra-ui/react";
+import { Link } from "react-router-dom";
 
-function MMenu({ changeLvl }) {
+function MMenu() {
   const { isOpen, onOpen, onClose } = useDisclosure();
   useEffect(() => {
     onOpen("true");
@@ -64,14 +65,14 @@ function MMenu({ changeLvl }) {
                     </MenuButton>
                     <Portal>
                       <MenuList zIndex="10000">
-                        <MenuItem onClick={() => changeLvl(1)}>
-                          Уровень 1
+                        <MenuItem>
+                          <Link to="/training/1l1"> Уровень </Link>1
                         </MenuItem>
-                        <MenuItem onClick={() => changeLvl(1)}>
-                          Уровень 2
+                        <MenuItem>
+                          <Link to="/training/1l2">Уровень 2</Link>
                         </MenuItem>
-                        <MenuItem onClick={() => changeLvl(1)}>
-                          Уровень 3
+                        <MenuItem>
+                          <Link to="/training/1l3">Уровень 3</Link>
                         </MenuItem>
                       </MenuList>
                     </Portal>
@@ -82,14 +83,14 @@ function MMenu({ changeLvl }) {
                     </MenuButton>
                     <Portal>
                       <MenuList zIndex="10000">
-                        <MenuItem onClick={() => changeLvl(2)}>
-                          Уровень 1
+                        <MenuItem>
+                          <Link to="/training/2l1">Уровень 1</Link>
                         </MenuItem>
-                        <MenuItem onClick={() => changeLvl(2)}>
-                          Уровень 2
+                        <MenuItem>
+                          <Link to="/training/2l2">Уровень 2</Link>
                         </MenuItem>
-                        <MenuItem onClick={() => changeLvl(2)}>
-                          Уровень 3
+                        <MenuItem>
+                          <Link to="/training/2l3">Уровень 3</Link>
                         </MenuItem>
                       </MenuList>
                     </Portal>
@@ -100,14 +101,14 @@ function MMenu({ changeLvl }) {
                     </MenuButton>
                     <Portal>
                       <MenuList zIndex="10000">
-                        <MenuItem onClick={() => changeLvl(3)}>
-                          Уровень 1
+                        <MenuItem>
+                          <Link to="/training/3l1">Уровень 1</Link>
                         </MenuItem>
-                        <MenuItem onClick={() => changeLvl(3)}>
-                          Уровень 2
+                        <MenuItem>
+                          <Link to="/training/3l2">Уровень 2</Link>
                         </MenuItem>
-                        <MenuItem onClick={() => changeLvl(3)}>
-                          Уровень 3
+                        <MenuItem>
+                          <Link to="/training/3l3">Уровень 3</Link>
                         </MenuItem>
                       </MenuList>
                     </Portal>
@@ -118,14 +119,14 @@ function MMenu({ changeLvl }) {
                     </MenuButton>
                     <Portal>
                       <MenuList zIndex="10000">
-                        <MenuItem onClick={() => changeLvl(4)}>
-                          Уровень 1
+                        <MenuItem>
+                          <Link to="/training/4l1">Уровень 1</Link>
                         </MenuItem>
-                        <MenuItem onClick={() => changeLvl(4)}>
-                          Уровень 2
+                        <MenuItem>
+                          <Link to="/training/4l2">Уровень 2</Link>
                         </MenuItem>
-                        <MenuItem onClick={() => changeLvl(4)}>
-                          Уровень 3
+                        <MenuItem>
+                          <Link to="/training/4l3">Уровень 3</Link>
                         </MenuItem>
                       </MenuList>
                     </Portal>

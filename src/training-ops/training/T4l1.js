@@ -1,31 +1,20 @@
-import "./data/1/training.scss";
 import React, { useState } from "react";
-import schema1 from "../Img/schema1.png";
-import schema2 from "../Img/schema2.png";
-import schema3 from "../Img/schema3.png";
-import schema4 from "../Img/schema4.png";
+import schema from "../Img/schema4.png";
 import cx from "classnames";
 import MMenu from "./MMenu";
 import net from "../../sound/net.mp3";
 import da from "../../sound/da.mp3";
 import { Howl } from "howler";
 
-import { board, iBoard } from "./data/1/1l1";
+import { board, iBoard } from "./data/2/2l1";
 
-function Training() {
-  const [activeLvl, setActiveLvl] = useState(1);
 
-  const changeLvl = (activeLvl) => {
-    setActiveLvl(activeLvl);
-  };
-  const activeArrayLvl = [
-    { board, schema: schema1 },
-    { board, schema: schema2 },
-    { board, schema: schema3 },
-    { board, schema: schema4 },
-  ];
+import "./data/2/t2.scss";
 
-  const [boards, setBoard] = useState(activeArrayLvl[activeLvl - 1].board);
+function T2l1() {
+
+
+  const [boards, setBoard] = useState(board);
 
   function soundPlay(src) {
     const sound = new Howl({
@@ -107,7 +96,7 @@ function Training() {
     setIsRotate(!isRotate);
 
     for (let i = 1; i <= 12; i++) {
-      const arr1 = boards[i]?.items[0]?.id;
+      const arr1 = board[i]?.items[0]?.id;
       const arr2 = iBoard[i]?.items[0]?.id;
 
       if (Array.isArray(arr1) && Array.isArray(arr2)) {
@@ -147,7 +136,7 @@ function Training() {
   return (
     <div className="dnd">
       {boards.map((board, i) => (
-        <div className={cx("absolute board board") + i + " " + boards[i].color}>
+        <div className={cx("absolute board board2l") + i + " " + boards[i].color}>
           <div
             className={cx(
               "board__title",
@@ -157,6 +146,7 @@ function Training() {
             onDrop={(e) => dropCardHandler(e, board)}
           >
             {board.title}
+            {board.id}
           </div>
           {board.items.map((item, i) => (
             <div
@@ -174,6 +164,7 @@ function Training() {
               )}
             >
               {item.body}
+              {item.id}
             </div>
           ))}
         </div>
@@ -181,9 +172,9 @@ function Training() {
       <button onClick={checkCode} className="absolute MyButton">
         Проверка
       </button>
-      <MMenu changeLvl={changeLvl} />
+      <MMenu />
       <img
-        src={activeArrayLvl[activeLvl - 1].schema}
+        src={schema}
         className="boardImg absolute"
         alt=""
       />
@@ -191,4 +182,4 @@ function Training() {
   );
 }
 
-export default Training;
+export default T2l1;

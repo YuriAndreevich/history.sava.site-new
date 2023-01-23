@@ -18,9 +18,9 @@ export const iBoard = [
     items: [{ id: [2], title: "2" }],
   },
   {
-    id: [3, 11],
+    id: [3],
     title: "3",
-    items: [{ id: [3, 11], title: "3" }],
+    items: [{ id: [3], title: "3" }],
   },
 
   {
@@ -59,9 +59,9 @@ export const iBoard = [
     items: [{ id: [5, 6, 7, 8, 9, 10], title: "10" }],
   },
   {
-    id: [11, 3],
+    id: [11],
     title: "11",
-    items: [{ id: [11, 3], title: "11" }],
+    items: [{ id: [11], title: "11" }],
   },
   {
     id: [12, 4],
@@ -81,7 +81,7 @@ export const board = [
         title: "2",
       },
       {
-        id: [3, 11],
+        id: [3],
         body: <img className="imgIcon" src={izvRuchn} alt="" />,
         title: "3",
       },
@@ -121,7 +121,7 @@ export const board = [
         title: "10",
       },
       {
-        id: [11, 3],
+        id: [11],
         body: <img className="imgIcon" src={izvRuchn} alt="" />,
         title: "11",
       },
