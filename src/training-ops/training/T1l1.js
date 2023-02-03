@@ -119,8 +119,9 @@ function T1l1() {
         }
       }
       if (Array.isArray(arr1) && Array.isArray(arr2)) {
-        equal ? (boards[i].color = "green") : (boards[i].color = "red");
+        equal ? (boards[i].color = "green") : (boards[i].color = "red")
       }
+      console.log(equal)
 
       if (boards[i].color == "green") {
         console.log("верно");
@@ -129,6 +130,7 @@ function T1l1() {
         console.log("не верно");
         soundPlay(audioClips[0].sound);
       }
+
     }
   };
 
@@ -162,6 +164,7 @@ function T1l1() {
               )}
             >
               {item.body}
+
             </div>
           ))}
         </div>

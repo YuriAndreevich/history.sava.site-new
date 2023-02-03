@@ -1,12 +1,17 @@
 import { Stage, Layer, Star, Text, Line } from "react-konva";
 import React from "react";
 
+import ZvukIzv from "../../Img/training/звуковойОповещатель.png";
+import SvetOpov from "../../Img/training/световойОповещатель.png";
+import DimovoyToch from "../../Img/training/извещательДымовойТочечный.png";
+import izvRuchn from "../../Img/training/извещательРучной.png";
+const izvArray = [ZvukIzv, SvetOpov, DimovoyToch, izvRuchn]
 function generateShapes() {
-  return [...Array(10)].map((_, i) => ({
+  return izvArray.map((src, i) => ({
+    src,
     id: i.toString(),
-    x: Math.random() * window.innerWidth,
-    y: Math.random() * window.innerHeight,
-    rotation: Math.random() * 180,
+    x: 100,
+    y: 100,
     isDragging: false,
   }));
 }
@@ -15,6 +20,7 @@ const INITIAL_STATE = generateShapes();
 
 const T1l2 = () => {
   const [stars, setStars] = React.useState(INITIAL_STATE);
+  console.log(stars)
 
   const handleDragStart = (e) => {
     const id = e.target.id();
@@ -37,9 +43,11 @@ const T1l2 = () => {
       })
     );
   };
-  const [tool, setTool] = React.useState("pen");
+  const [tool, setTool] = React.useState("Карандаш");
   const [lines, setLines] = React.useState([]);
   const isDrawing = React.useRef(false);
+  const [drowing, setDrowing] = React.useState(true)
+  const [droping, setDroping] = React.useState(false)
 
   const handleMouseDown = (e) => {
     isDrawing.current = true;
@@ -67,45 +75,70 @@ const T1l2 = () => {
     isDrawing.current = false;
   };
 
+  const handleDrowing = () => {
+    setDrowing(!drowing)
+    setDroping(!droping)
+  }
+
   return (
     <>
+      <select
+        value={tool}
+        onChange={(e) => {
+          setTool(e.target.value);
+        }}
+      >
+        <option value="pen">Карандаш</option>
+        <option value="eraser">Стерка</option>
+      </select>
+      <button onClick={handleDrowing}>Изменить режим</button>
+
       <Stage
-        width={window.innerWidth}
-        height={window.innerHeight}
-        onMouseDown={handleMouseDown}
+        width={1280}
+        height={700}
+        onMouseDown={drowing && handleMouseDown}
         onMousemove={handleMouseMove}
         onMouseup={handleMouseUp}
       >
         <Layer>
           {stars.map((star) => (
-            <Star
-              key={star.id}
-              id={star.id}
-              x={star.x}
-              y={star.y}
-              numPoints={5}
-              innerRadius={20}
-              outerRadius={40}
-              fill="#89b717"
-              opacity={0.8}
-              draggable
-              rotation={star.rotation}
-              shadowColor="black"
-              shadowBlur={10}
-              shadowOpacity={0.6}
-              shadowOffsetX={star.isDragging ? 10 : 5}
-              shadowOffsetY={star.isDragging ? 10 : 5}
-              scaleX={star.isDragging ? 1.2 : 1}
-              scaleY={star.isDragging ? 1.2 : 1}
-              onDragStart={handleDragStart}
-              onDragEnd={handleDragEnd}
-            />
-          ))}
+            <>
+              {console.log(star.src)}
+              <Star
+                alt=""
+                src={star.src}
+                className="icon"
+                key={star.id}
+                id={star.id}
+                x={star.x}
+                y={star.y}
+                numPoints={5}
+                innerRadius={20}
+                outerRadius={40}
+                fill="#89b717"
+                opacity={0.8}
+                draggable={droping && true}
+                shadowColor="black"
+                shadowBlur={10}
+                shadowOpacity={0.6}
+                shadowOffsetX={star.isDragging ? 10 : 5}
+                shadowOffsetY={star.isDragging ? 10 : 5}
+                scaleX={star.isDragging ? 1.2 : 1}
+                scaleY={star.isDragging ? 1.2 : 1}
+                onDragStart={handleDragStart}
+                onDragEnd={handleDragEnd}
+
+              />
+            </>
+          ))
+
+          }
+
           {lines.map((line, i) => (
             <Line
               key={i}
               points={line.points}
-              stroke="#df4b26"
+              stroke="#000"
               strokeWidth={5}
               tension={0.5}
               lineCap="round"
@@ -117,15 +150,8 @@ const T1l2 = () => {
           ))}
         </Layer>
       </Stage>
-      <select
-        value={tool}
-        onChange={(e) => {
-          setTool(e.target.value);
-        }}
-      >
-        <option value="pen">Pen</option>
-        <option value="eraser">Eraser</option>
-      </select>
+
+
     </>
   );
 };
